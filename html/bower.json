@@ -1,0 +1,20 @@
+{
+  "name": "html",
+  "authors": [
+    "ederavilaprado <prado.eder@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Snap.svg": "snap.svg#^0.5.1"
+  }
+}

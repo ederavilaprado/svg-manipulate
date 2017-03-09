@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image editor</title>
+  </head>
+  <body>
+
+    <div>
+      <!-- <svg id="canvas" width="2480px" height="3508px" viewBox="0 0 2480 3508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <title>A4</title>
+          <desc>Created with Sketch.</desc>
+          <defs>
+              <rect id="path-1" x="177" y="179" width="1063" height="590.599976"></rect>
+              <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="1063" height="590.599976" fill="white">
+                  <use xlink:href="#path-1"></use>
+              </mask>
+          </defs>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="A4" stroke="#979797" stroke-width="2" fill="#D8D8D8">
+                  <use id="Rectangle" mask="url(#mask-2)" xlink:href="#path-1"></use>
+              </g>
+          </g>
+      </svg> -->
+      <svg id="canvas" width="2480px" height="3508px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+      </svg>
+    </div>
+
+    <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script>
+    <script>
+      let s = Snap("#canvas");
+      s.attr({
+        width: window.innerWidth - 20,
+        height: window.innerHeight - 20,
+      });
+
+      // # 300DPI -> 72 DPI
+      let rw = 1063,
+          rh = 590.599976;
+
+      function convertDPI(px, dpiIn, dpiOut) {
+        return (px/dpiIn)*dpiOut;
+      }
+
+      let rect = s.rect(convertDPI(0, 300, 140), convertDPI(0, 300, 140), convertDPI(rw, 300, 140), convertDPI(rh, 300, 140));
+
+      let rectdois = s.rect(convertDPI(50, 300, 140), convertDPI(50, 300, 140), convertDPI(320, 300, 140), convertDPI(280, 300, 140));
+      rectdois.attr({
+        fill: 'lime',
+      });
+      // var myMatrix = new Snap.Matrix();
+      // myMatrix.scale(2);
+      // rect.transform(myMatrix);
+
+
+      // limitar o tamanho máximo de DPIs pra tela
+
+      console.log(rect.attr())
+
+
+      // {
+      //   dpiReal: 300,
+      //   elements: {
+      //     zero: {
+      //       x:
+      //     }
+      //   }
+      // }
+
+    </script>
+  </body>
+</html>
