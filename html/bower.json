@@ -15,6 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "Snap.svg": "snap.svg#^0.5.1"
+    "Snap.svg": "snap.svg#^0.5.1",
+    "svg.js": "^2.4.0",
+    "svg.draggable.js": "^2.2.1"
   }
 }

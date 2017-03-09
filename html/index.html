@@ -13,7 +13,7 @@
           <title>A4</title>
           <desc>Created with Sketch.</desc>
           <defs>
-              <rect id="path-1" x="177" y="179" width="1063" height="590.599976"></rect>
+              <rect id="path-1" x="177" y="179" width="9cm" height="5cm"></rect>
               <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="1063" height="590.599976" fill="white">
                   <use xlink:href="#path-1"></use>
               </mask>
@@ -24,51 +24,46 @@
               </g>
           </g>
       </svg> -->
-      <svg id="canvas" width="2480px" height="3508px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
+      <svg id="canvas" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- <rect width="100" height="100" x="238" y="172"></rect> -->
       </svg>
     </div>
 
-    <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script>
+    <!-- <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script> -->
+    <script src="bower_components/svg.js/dist/svg.min.js"></script>
+    <script src="bower_components/svg.draggable.js/dist/svg.draggable.min.js"></script>
     <script>
-      let s = Snap("#canvas");
-      s.attr({
-        width: window.innerWidth - 20,
-        height: window.innerHeight - 20,
-      });
-
-      // # 300DPI -> 72 DPI
-      let rw = 1063,
-          rh = 590.599976;
-
-      function convertDPI(px, dpiIn, dpiOut) {
-        return (px/dpiIn)*dpiOut;
-      }
-
-      let rect = s.rect(convertDPI(0, 300, 140), convertDPI(0, 300, 140), convertDPI(rw, 300, 140), convertDPI(rh, 300, 140));
-
-      let rectdois = s.rect(convertDPI(50, 300, 140), convertDPI(50, 300, 140), convertDPI(320, 300, 140), convertDPI(280, 300, 140));
-      rectdois.attr({
-        fill: 'lime',
-      });
-      // var myMatrix = new Snap.Matrix();
-      // myMatrix.scale(2);
-      // rect.transform(myMatrix);
-
-
-      // limitar o tamanho máximo de DPIs pra tela
-
-      console.log(rect.attr())
-
-
-      // {
-      //   dpiReal: 300,
-      //   elements: {
-      //     zero: {
-      //       x:
-      //     }
-      //   }
+      // let s = Snap("#canvas");
+      // s.attr({
+      //   width: window.innerWidth - 20,
+      //   height: window.innerHeight - 20,
+      // });
+      //
+      // // # 300DPI -> 72 DPI
+      // let rw = 1063,
+      //     rh = 590.599976;
+      //
+      // function convertDPI(px, dpiIn, dpiOut) {
+      //   return (px/dpiIn)*dpiOut;
       // }
+      //
+      // let rect = s.rect(convertDPI(0, 300, 140), convertDPI(0, 300, 140), convertDPI(rw, 300, 140), convertDPI(rh, 300, 140));
+      //
+      // let rectdois = s.rect(convertDPI(50, 300, 140), convertDPI(50, 300, 140), convertDPI(320, 300, 140), convertDPI(280, 300, 140));
+      // rectdois.attr({
+      //   fill: 'lime',
+      // });
+      //
+      //
+      var d = SVG('canvas').size(window.innerWidth - 20, window.innerHeight - 20)
+      var rect = d.rect(100, 100);
+      rect.draggable().on('dragend', function(e){
+        // e.preventDefault()
+        // this.move(e.detail.p.x, e.detail.p.y)
+        console.log('end', this.attr())
+      })
+
+      // d.select('rect').transform({ rotation: 140 })
 
     </script>
   </body>
