@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1063px" height="591px" viewBox="0 0 1063 591" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #D5D5D5;">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Card</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="43" y="35" width="210" height="204"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="210" height="204" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Card">
+            <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" fill="#B75656" xlink:href="#path-1"></use>
+            <text id="Something" font-family="Helvetica" font-size="18" font-weight="normal" fill="#000000">
+                <tspan x="952" y="551">Something</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
