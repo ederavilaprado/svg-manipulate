@@ -9,8 +9,8 @@ function resolvePath(fileName) {
 
 
 svgexport.render({
-  'input' : resolvePath('group.svg'),
-  'output' : resolvePath('group.png'),
+  'input' : resolvePath('card.svg'),
+  'output' : resolvePath('card.png'),
 }, function(err) {
   console.log(err);
 });

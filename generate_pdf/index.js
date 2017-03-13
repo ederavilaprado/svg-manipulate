@@ -10,21 +10,23 @@ var doc = new PDFDocument({
   autoFirstPage: false
 });
 
-doc
-  .pipe(fs.createWriteStream('output.pdf'));
+doc.pipe(fs.createWriteStream(resolvePath('output_pdf.pdf')));
+
+
+function convertMmToPoint(input) {
+  // 1mm = 2.834645669
+  return input * 2.834645669;
+}
+
+// business card (9cm x 5cm)
+const w = 90, h = 50;
 
 doc.addPage({
   margin: 0,
   layout: 'portrait',
-  size: [2480, 3508], // 300 DPI
+  size: [convertMmToPoint(90), convertMmToPoint(50)],
 });
 
-// doc
-//   // .font('fonts/arial.ttf')
-//    .fontSize(25)
-//    .text('Some text with an embedded font!', 100, 100)
-
-// doc.image(resolvePath('group.png'), 20, 20, {width: 255});
-doc.image(resolvePath('group.png'), 100, 100);
+doc.image(resolvePath('card.png'), 0, 0, {width: convertMmToPoint(90)});
 
 doc.end();
